@@ -1,0 +1,22 @@
+.loader {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  margin: 5rem auto;
+  border: 0.8rem solid $primary;
+  border-left-color: $alphaPrimary;
+  animation: load8 1.2s infinite linear;
+  &::after {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+  }
+}
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

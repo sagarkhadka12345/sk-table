@@ -1,0 +1,47 @@
+{
+  "name": "sk-table",
+  "version": "1.0.0",
+  "description": "A simple Table Library with all functionality like pagination, sorting, searching",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "publish-npm:beta": "npm publish --tag=next",
+    "prepublish": "rm -rf ./dist && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "start": "vite build"
+  },
+  "peerDependencies": {
+    "react": ">=15.0.1",
+    "react-dom": ">=15.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "react": "^18.2.0",
+    "react-dom": ">=15.0.1",
+    "typescript": "^4.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagarkhadka12345/sk-table.git"
+  },
+  "keywords": [
+    "Sk-table"
+  ],
+  "author": "Sagar Khadka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagarkhadka12345/sk-table/issues"
+  },
+  "homepage": "https://github.com/sagarkhadka12345/sk-table#readme",
+  "dependencies": {
+    "vite": "^4.3.9"
+  }
+}

@@ -1,0 +1,209 @@
+.responsive {
+  overflow-x: auto;
+  box-shadow: $box-shadow;
+}
+.table {
+  min-width: 100%;
+  width: max-content;
+  max-height: 100vh;
+  text-align: center;
+  border-collapse: collapse;
+  position: relative;
+  border-radius: calc($radius / 2);
+  overflow: hidden;
+  box-shadow: $box-shadow !important;
+  border-radius: $radius;
+  &-thead {
+    position: sticky;
+    top: 0;
+
+    &--tr {
+      height: 3.5rem;
+      background-color: $primary;
+      &__td {
+        text-align: left;
+        font-size: 1.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: $alphagray;
+        cursor: pointer;
+        padding: 0.75rem 1rem;
+
+        &-sort {
+          padding: 0 0 0 0.75rem;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+  &-tbody {
+    padding: 0;
+    &--tr {
+      &__td {
+        padding: 1rem 1.25rem;
+        border-bottom: 0.1rem solid rgba($color: $primary, $alpha: 0.08);
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: rgba($color: $black, $alpha: 0.7);
+        text-align: left;
+        background-color: $white;
+        &:first-child {
+          width: 6rem;
+        }
+      }
+      &.noData td {
+        padding: 2rem !important;
+        font-size: 1.6rem;
+        font-weight: 300;
+        font-style: italic;
+        color: $alphaBlack;
+        letter-spacing: -0.1rem;
+        text-transform: uppercase;
+      }
+      &:last-child {
+        td {
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+  &-loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.tablewrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35rem 0;
+    gap: 1rem;
+    &--search {
+      border-radius: $radius;
+      background-color: $white;
+      padding: 0.2rem 0.6rem;
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box-shadow-alt;
+
+      &__input {
+        width: 22.5rem;
+        padding: 0.75rem;
+        outline: none;
+        border: none;
+        border-bottom-left-radius: calc($radius/1.5);
+        border-top-left-radius: calc($radius/1.5);
+      }
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        width: 3rem;
+        color: $primary;
+        border-bottom-right-radius: calc($radius/1.5);
+        border-top-right-radius: calc($radius/1.5);
+      }
+    }
+    &--select {
+      height: 100%;
+      padding: 0.7rem 0.6rem;
+
+      display: flex;
+      justify-content: center;
+      background-color: $white;
+      outline: none;
+      border: 0px solid rgba($color: $black, $alpha: 0.13);
+      box-shadow: $box-shadow-alt !important;
+      color: rgba($color: $black, $alpha: 0.7);
+      border-radius: $radius;
+    }
+    &--insert {
+      width: 10rem;
+      height: 4rem;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.2rem;
+      align-items: center;
+      background-color: $primary;
+      color: $alphagray;
+      border-radius: calc($radius/2);
+      cursor: pointer;
+      border-radius: $radius;
+      &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      }
+    }
+  }
+  &-pagination {
+    height: 4rem;
+    display: flex;
+    justify-content: flex-end;
+    &--main {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      &__left,
+      &__right {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $alphagray;
+        background-color: $primary;
+        border-radius: $radius;
+        cursor: pointer;
+        &:active {
+          opacity: 0.8;
+        }
+      }
+      &__left,
+      &__right {
+        &-disabled {
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $alphagray;
+
+          border-radius: $radius;
+          cursor: pointer;
+          background-color: rgba($color: $primary, $alpha: 0.6);
+          &:active {
+            opacity: 0.8;
+          }
+        }
+      }
+      &__page {
+        width: 1rem;
+        display: flex;
+        justify-content: center;
+        font-size: 1.7rem;
+        font-weight: 400;
+        color: $alphaBlack;
+        cursor: default;
+      }
+    }
+  }
+}
